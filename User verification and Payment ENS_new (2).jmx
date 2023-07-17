@@ -1,0 +1,1857 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.5">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="FP" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">stoptestnow</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">0</stringProp>
+        <longProp name="ThreadGroup.start_time">1517987159000</longProp>
+        <longProp name="ThreadGroup.end_time">1517987159000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="1.1.1 User verification by Account number to ENS - Successful response" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&#xd;
+&lt;FPEnvelope xmlns:header=&quot;urn:iso:std:iso:20022:tech:xsd:head.001.001.03&quot;&#xd;
+            xmlns:document=&quot;urn:iso:std:iso:20022:tech:xsd:acmt.023.001.03&quot;&#xd;
+            xmlns=&quot;urn:iso:std:iso:20022:tech:xsd:verification_request&quot;&gt;&#xd;
+    &lt;header:AppHdr&gt;&#xd;
+        &lt;header:Fr&gt;&#xd;
+            &lt;header:FIId&gt;&#xd;
+                &lt;header:FinInstnId&gt;&#xd;
+                    &lt;header:Othr&gt;&#xd;
+                        &lt;header:Id&gt;BPCDM-B&lt;/header:Id&gt;&#xd;
+                    &lt;/header:Othr&gt;&#xd;
+                &lt;/header:FinInstnId&gt;&#xd;
+            &lt;/header:FIId&gt;&#xd;
+        &lt;/header:Fr&gt;&#xd;
+        &lt;header:To&gt;&#xd;
+            &lt;header:FIId&gt;&#xd;
+                &lt;header:FinInstnId&gt;&#xd;
+                    &lt;header:Othr&gt;&#xd;
+                        &lt;header:Id&gt;FP&lt;/header:Id&gt;&#xd;
+                    &lt;/header:Othr&gt;&#xd;
+                &lt;/header:FinInstnId&gt;&#xd;
+            &lt;/header:FIId&gt;&#xd;
+        &lt;/header:To&gt;&#xd;
+        &lt;header:BizMsgIdr&gt;BPCDM-B${__time(yyyyMMddhhmmssSSSSSSSS)}&lt;/header:BizMsgIdr&gt;&#xd;
+        &lt;header:MsgDefIdr&gt;acmt.023.001.03&lt;/header:MsgDefIdr&gt;&#xd;
+        &lt;header:CreDt&gt;2023-04-04T00:00:00.000Z&lt;/header:CreDt&gt;&#xd;
+    &lt;/header:AppHdr&gt;&#xd;
+    &lt;document:Document&gt;&#xd;
+        &lt;document:IdVrfctnReq&gt;&#xd;
+            &lt;document:Assgnmt&gt;&#xd;
+                &lt;document:MsgId&gt;BPCDM-B${__time(yyyyMMddhhmmssSSSSSSSS)}&lt;/document:MsgId&gt;&#xd;
+                &lt;document:CreDtTm&gt;2023-04-04T00:00:00.000+03:00&lt;/document:CreDtTm&gt;&#xd;
+                &lt;document:Assgnr&gt;&#xd;
+                    &lt;document:Agt&gt;&#xd;
+                        &lt;document:FinInstnId&gt;&#xd;
+                            &lt;document:Othr&gt;&#xd;
+                                &lt;document:Id&gt;BPCDM-B&lt;/document:Id&gt;&#xd;
+                            &lt;/document:Othr&gt;&#xd;
+                        &lt;/document:FinInstnId&gt;&#xd;
+                    &lt;/document:Agt&gt;&#xd;
+                &lt;/document:Assgnr&gt;&#xd;
+                &lt;document:Assgne&gt;&#xd;
+                    &lt;document:Agt&gt;&#xd;
+                        &lt;document:FinInstnId&gt;&#xd;
+                            &lt;document:Othr&gt;&#xd;
+                                &lt;document:Id&gt;YBRD-B&lt;/document:Id&gt;&#xd;
+                            &lt;/document:Othr&gt;&#xd;
+                        &lt;/document:FinInstnId&gt;&#xd;
+                    &lt;/document:Agt&gt;&#xd;
+                &lt;/document:Assgne&gt;&#xd;
+            &lt;/document:Assgnmt&gt;&#xd;
+            &lt;document:Vrfctn&gt;&#xd;
+            &lt;document:Id&gt;ID&lt;/document:Id&gt;&#xd;
+                &lt;document:PtyAndAcctId&gt;&#xd;
+                    &lt;document:Acct&gt;&#xd;
+                    &lt;document:Id&gt;&#xd;
+                        &lt;document:Othr&gt;							&#xd;
+                                    &lt;document:Id&gt;USD:1234567890&lt;/document:Id&gt;&#xd;
+                                    &lt;document:SchmeNm&gt;&#xd;
+                                        &lt;document:Prtry&gt;ACCT&lt;/document:Prtry&gt;&#xd;
+                                    &lt;/document:SchmeNm&gt;&#xd;
+                        &lt;/document:Othr&gt;&#xd;
+                     &lt;/document:Id&gt;&#xd;
+                    &lt;/document:Acct&gt;&#xd;
+                &lt;/document:PtyAndAcctId&gt;&#xd;
+            &lt;/document:Vrfctn&gt;&#xd;
+        &lt;/document:IdVrfctnReq&gt;&#xd;
+    &lt;/document:Document&gt;&#xd;
+&lt;/FPEnvelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">9001</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/BPCMBD/verification</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-type</stringProp>
+                <stringProp name="Header.value">application/xml</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">OrgnlId</stringProp>
+            <stringProp name="RegexExtractor.regex">(OrgnlId&gt;)([(a-zA-Z-)(0-9)]+)</stringProp>
+            <stringProp name="RegexExtractor.template">S1$</stringProp>
+            <stringProp name="RegexExtractor.default">8888888888888888888888</stringProp>
+            <stringProp name="RegexExtractor.match_number"></stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug PostProcessor" enabled="true">
+            <boolProp name="displayJMeterProperties">false</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySamplerProperties">true</boolProp>
+            <boolProp name="displaySystemProperties">false</boolProp>
+          </DebugPostProcessor>
+          <hashTree/>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
+            <stringProp name="ConstantTimer.delay">1000</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="1.2.1 Request for payment push (C2C) to ENS - Successful response JWT to sign" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&#xd;
+&lt;FPEnvelope &#xd;
+  xmlns:header=&quot;urn:iso:std:iso:20022:tech:xsd:head.001.001.03&quot;&#xd;
+  xmlns:document=&quot;urn:iso:std:iso:20022:tech:xsd:pacs.008.001.10&quot;&#xd;
+  xmlns=&quot;urn:iso:std:iso:20022:tech:xsd:payment_request&quot;&gt;&#xd;
+  &lt;header:AppHdr&gt;&#xd;
+    &lt;header:Fr&gt;&#xd;
+      &lt;header:FIId&gt;&#xd;
+        &lt;header:FinInstnId&gt;&#xd;
+          &lt;header:Othr&gt;&#xd;
+            &lt;header:Id&gt;BPCDM-B&lt;/header:Id&gt;&#xd;
+          &lt;/header:Othr&gt;&#xd;
+        &lt;/header:FinInstnId&gt;&#xd;
+      &lt;/header:FIId&gt;&#xd;
+    &lt;/header:Fr&gt;&#xd;
+    &lt;header:To&gt;&#xd;
+      &lt;header:FIId&gt;&#xd;
+        &lt;header:FinInstnId&gt;&#xd;
+          &lt;header:Othr&gt;&#xd;
+            &lt;header:Id&gt;FP&lt;/header:Id&gt;&#xd;
+          &lt;/header:Othr&gt;&#xd;
+        &lt;/header:FinInstnId&gt;&#xd;
+      &lt;/header:FIId&gt;&#xd;
+    &lt;/header:To&gt;&#xd;
+    &lt;header:BizMsgIdr&gt;BPCDM-B${__time(yyyyMMddhhmmssSSSSSSSS)}&lt;/header:BizMsgIdr&gt;&#xd;
+    &lt;header:MsgDefIdr&gt;pacs.008.001.10&lt;/header:MsgDefIdr&gt;&#xd;
+    &lt;header:CreDt&gt;2023-06-08T00:00:00.000Z&lt;/header:CreDt&gt;&#xd;
+  &lt;/header:AppHdr&gt;&#xd;
+  &lt;document:Document&gt;&#xd;
+    &lt;document:FIToFICstmrCdtTrf&gt;&#xd;
+      &lt;document:GrpHdr&gt;&#xd;
+        &lt;document:MsgId&gt;BPCDM-B${__time(yyyyMMddhhmmssSSSSSSSS)}&lt;/document:MsgId&gt;&#xd;
+        &lt;document:CreDtTm&gt;2023-06-08T00:00:00.000+03:00&lt;/document:CreDtTm&gt;&#xd;
+        &lt;document:NbOfTxs&gt;1&lt;/document:NbOfTxs&gt;&#xd;
+        &lt;document:SttlmInf&gt;&#xd;
+          &lt;document:SttlmMtd&gt;CLRG&lt;/document:SttlmMtd&gt;&#xd;
+          &lt;document:ClrSys&gt;&#xd;
+            &lt;document:Prtry&gt;FP&lt;/document:Prtry&gt;&#xd;
+          &lt;/document:ClrSys&gt;&#xd;
+        &lt;/document:SttlmInf&gt;&#xd;
+        &lt;document:PmtTpInf&gt;&#xd;
+          &lt;document:LclInstrm&gt;&#xd;
+            &lt;document:Prtry&gt;P2P&lt;/document:Prtry&gt;&#xd;
+          &lt;/document:LclInstrm&gt;&#xd;
+        &lt;/document:PmtTpInf&gt;&#xd;
+        &lt;document:InstgAgt&gt;&#xd;
+          &lt;document:FinInstnId&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;BPCDM-B&lt;/document:Id&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:FinInstnId&gt;&#xd;
+        &lt;/document:InstgAgt&gt;&#xd;
+        &lt;document:InstdAgt&gt;&#xd;
+          &lt;document:FinInstnId&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;YBRD-B&lt;/document:Id&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:FinInstnId&gt;&#xd;
+        &lt;/document:InstdAgt&gt;&#xd;
+      &lt;/document:GrpHdr&gt;&#xd;
+      &lt;document:CdtTrfTxInf&gt;&#xd;
+        &lt;document:PmtId&gt;&#xd;
+          &lt;document:EndToEndId&gt;-&lt;/document:EndToEndId&gt;&#xd;
+          &lt;document:TxId&gt;${OrgnlId_g2}&lt;/document:TxId&gt;&#xd;
+        &lt;/document:PmtId&gt;&#xd;
+        &lt;document:IntrBkSttlmAmt Ccy=&quot;USD&quot;&gt;10&lt;/document:IntrBkSttlmAmt&gt;&#xd;
+        &lt;document:AccptncDtTm&gt;2023-06-12T17:02:39.071+06:00&lt;/document:AccptncDtTm&gt;&#xd;
+        &lt;document:InstdAmt Ccy=&quot;USD&quot;&gt;10&lt;/document:InstdAmt&gt;&#xd;
+        &lt;document:ChrgBr&gt;SLEV&lt;/document:ChrgBr&gt;&#xd;
+        &lt;document:Dbtr&gt;&#xd;
+          &lt;document:Nm&gt;MSCWT&lt;/document:Nm&gt;&#xd;
+          &lt;document:PstlAdr&gt;&#xd;
+            &lt;document:AdrLine&gt;MOSCOW&lt;/document:AdrLine&gt;&#xd;
+          &lt;/document:PstlAdr&gt;&#xd;
+        &lt;/document:Dbtr&gt;&#xd;
+        &lt;document:DbtrAcct&gt;&#xd;
+          &lt;document:Id&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;131234567890&lt;/document:Id&gt;&#xd;
+              &lt;document:SchmeNm&gt;&#xd;
+                &lt;document:Prtry&gt;ACCT&lt;/document:Prtry&gt;&#xd;
+              &lt;/document:SchmeNm&gt;&#xd;
+              &lt;document:Issr&gt;C&lt;/document:Issr&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:Id&gt;&#xd;
+        &lt;/document:DbtrAcct&gt;&#xd;
+        &lt;document:DbtrAgt&gt;&#xd;
+          &lt;document:FinInstnId&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;BPCDM-B&lt;/document:Id&gt;&#xd;
+              &lt;document:Issr&gt;ATM&lt;/document:Issr&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:FinInstnId&gt;&#xd;
+        &lt;/document:DbtrAgt&gt;&#xd;
+        &lt;document:CdtrAgt&gt;&#xd;
+          &lt;document:FinInstnId&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;YBRD-B&lt;/document:Id&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:FinInstnId&gt;&#xd;
+        &lt;/document:CdtrAgt&gt;&#xd;
+        &lt;document:Cdtr&gt;&#xd;
+          &lt;document:Nm&gt;test&lt;/document:Nm&gt;&#xd;
+        &lt;/document:Cdtr&gt;&#xd;
+        &lt;document:CdtrAcct&gt;&#xd;
+          &lt;document:Id&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;13123456789000&lt;/document:Id&gt;&#xd;
+              &lt;document:SchmeNm&gt;&#xd;
+                &lt;document:Prtry&gt;ACCT&lt;/document:Prtry&gt;&#xd;
+              &lt;/document:SchmeNm&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:Id&gt;&#xd;
+        &lt;/document:CdtrAcct&gt;&#xd;
+        &lt;document:RmtInf&gt;&#xd;
+          &lt;document:Ustrd&gt;Transferring my funds&lt;/document:Ustrd&gt;&#xd;
+        &lt;/document:RmtInf&gt;&#xd;
+      &lt;/document:CdtTrfTxInf&gt;&#xd;
+    &lt;/document:FIToFICstmrCdtTrf&gt;&#xd;
+  &lt;/document:Document&gt;&#xd;
+&lt;/FPEnvelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">9001</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/xml_sign</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-type</stringProp>
+                <stringProp name="Header.value">application/xml</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">eyJhbGciOiJSUzUxMiIsInR5cCI6IkpPU0UiLCJ4NXQiOiJ5bVRaTDc2a1pUWUNhcjVsdWthVktaSmxHNmcifQ.eyJpc3MiOiIzNjAwMDEiLCJhdWQiOiIwMDAiLCJqdGkiOiIwZDY4NGI2Zi04ZWNjLTQwMTUtODFiYy03MTkzOGYxYmIyOWQiLCJhcGlrZXkiOiJhcGlrZXkiLCJhcGlzZWNyZXQiOiJhcGlzZWNyZXQifQ.aQdOGEwpfqfmR-awCxPhK9MyaUXqnxH4eut9TH8g9n56_wo5B-rUzYqqyNZClRNWcJHvSpGy9S_1kvVYdfIJi1UvTRzdWT3LnM2f-xqwmwNO3KytAZEiG8y-704X1djnxNyQDnXT7ThIPdrY0pe4noITfYSykOY6UbjXmSRN-YvF2tiM1GMuFu-rg4jwgK_mNLYhK0ejTy3gGHsGa9Vt8P9IINziGfSzQlzsRILf3xrziZHUWFJiy3Q9ykou7VL_dBFE9ovk_yVbpdY9BHZ3wcnlr1y99DwZWVlcD3ydOncIHddTvHgmAkyncrNbTFX14lcXOfH_zTs2_Xw2H0UMVA</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug PostProcessor" enabled="true">
+            <boolProp name="displayJMeterProperties">false</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySamplerProperties">true</boolProp>
+            <boolProp name="displaySystemProperties">false</boolProp>
+          </DebugPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="1.2.1 Request for payment push (C2C) to ENS - JWT signed" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;FPEnvelope xmlns=&quot;urn:iso:std:iso:20022:tech:xsd:payment_request&quot; xmlns:document=&quot;urn:iso:std:iso:20022:tech:xsd:pacs.008.001.10&quot; xmlns:header=&quot;urn:iso:std:iso:20022:tech:xsd:head.001.001.03&quot;&gt;&#xd;
+  &lt;header:AppHdr&gt;&#xd;
+    &lt;header:Fr&gt;&#xd;
+      &lt;header:FIId&gt;&#xd;
+        &lt;header:FinInstnId&gt;&#xd;
+          &lt;header:Othr&gt;&#xd;
+            &lt;header:Id&gt;BPCDM-B&lt;/header:Id&gt;&#xd;
+          &lt;/header:Othr&gt;&#xd;
+        &lt;/header:FinInstnId&gt;&#xd;
+      &lt;/header:FIId&gt;&#xd;
+    &lt;/header:Fr&gt;&#xd;
+    &lt;header:To&gt;&#xd;
+      &lt;header:FIId&gt;&#xd;
+        &lt;header:FinInstnId&gt;&#xd;
+          &lt;header:Othr&gt;&#xd;
+            &lt;header:Id&gt;FP&lt;/header:Id&gt;&#xd;
+          &lt;/header:Othr&gt;&#xd;
+        &lt;/header:FinInstnId&gt;&#xd;
+      &lt;/header:FIId&gt;&#xd;
+    &lt;/header:To&gt;&#xd;
+    &lt;header:BizMsgIdr&gt;BPCDM-B2023061603001404100000&lt;/header:BizMsgIdr&gt;&#xd;
+    &lt;header:MsgDefIdr&gt;pacs.008.001.10&lt;/header:MsgDefIdr&gt;&#xd;
+    &lt;header:CreDt&gt;2023-06-08T00:00:00.000Z&lt;/header:CreDt&gt;&#xd;
+  &lt;document:Sgntr xmlns:document=&quot;urn:iso:std:iso:20022:tech:xsd:head.001.001.03&quot;&gt;&lt;ds:Signature xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;&gt;&lt;ds:SignedInfo&gt;&lt;ds:CanonicalizationMethod Algorithm=&quot;http://www.w3.org/2001/10/xml-exc-c14n#&quot;/&gt;&lt;ds:SignatureMethod Algorithm=&quot;http://www.w3.org/2000/09/xmldsig#rsa-sha1&quot;/&gt;&lt;ds:Reference URI=&quot;#_f94a1af2-2e0e-49cb-928d-12889d1a92c7&quot;&gt;&lt;ds:Transforms&gt;&lt;ds:Transform Algorithm=&quot;http://www.w3.org/2001/10/xml-exc-c14n#&quot;/&gt;&lt;/ds:Transforms&gt;&lt;ds:DigestMethod Algorithm=&quot;http://www.w3.org/2001/04/xmlenc#sha256&quot;/&gt;&lt;ds:DigestValue&gt;sGm7W9pKqZuzxjgLe9ZA9h0ed3HHVftlRC0um2ysmSw=&lt;/ds:DigestValue&gt;&lt;/ds:Reference&gt;&lt;ds:Reference Type=&quot;http://uri.etsi.org/01903/v1.3.2#SignedProperties&quot; URI=&quot;#_baeadea7-dbed-435b-a9e8-be23f7b0997a-signedprops&quot;&gt;&lt;ds:Transforms&gt;&lt;ds:Transform Algorithm=&quot;http://www.w3.org/2001/10/xml-exc-c14n#&quot;/&gt;&lt;/ds:Transforms&gt;&lt;ds:DigestMethod Algorithm=&quot;http://www.w3.org/2001/04/xmlenc#sha256&quot;/&gt;&lt;ds:DigestValue&gt;CC306Q0ifrIgC3c+n9gOJcpoZ/1dzHM9AJ0gIeX+t78=&lt;/ds:DigestValue&gt;&lt;/ds:Reference&gt;&lt;ds:Reference&gt;&lt;ds:Transforms&gt;&lt;ds:Transform Algorithm=&quot;http://www.w3.org/2001/10/xml-exc-c14n#&quot;/&gt;&lt;/ds:Transforms&gt;&lt;ds:DigestMethod Algorithm=&quot;http://www.w3.org/2001/04/xmlenc#sha256&quot;/&gt;&lt;ds:DigestValue&gt;7FrCkVBucrY7urdaV8YhPtyb/cofQ4GuG+igO8HD/2E=&lt;/ds:DigestValue&gt;&lt;/ds:Reference&gt;&lt;/ds:SignedInfo&gt;&lt;ds:SignatureValue&gt;CLC1vf48VT28oJdnHecRVUX3Kwh15vr1eCaM022DSxy4l0QXHFMmRv3Md94V0K4dUHmNRNVKIBkHHkC0oqOY+puszPmbW7/7BSfM3geD35MQCRYa8FNPkOBHBL/Wh7B0Ccg/W6oUQX6e5yEDylToVYEhHEOIdZq7fJPnIocivJLP1/m2l5LJB5rH6s7tH6GBu6O1phu8hqjyJ0vL68vy1R79dMEX/t/ZOSLU5YnvryfbsH/irTp754BeTkmYBhXmhyOwK9VxVm8dER1eVjbQt+sa0gV+neLYx6F0vmDKB1qzi+hlgpdADDEm0q5cQ9afM4LzLbIQwWvIkXII9iMmYg==&lt;/ds:SignatureValue&gt;&lt;ds:KeyInfo Id=&quot;_f94a1af2-2e0e-49cb-928d-12889d1a92c7&quot;&gt;&lt;ds:X509Data&gt;&lt;ds:X509IssuerSerial&gt;&lt;ds:X509IssuerName&gt;CN=test_user, OU=test_unit, O=bpc_test, L=Budapest, ST=Unknown, C=HU&lt;/ds:X509IssuerName&gt;&lt;ds:X509SerialNumber&gt;1807027036&lt;/ds:X509SerialNumber&gt;&lt;/ds:X509IssuerSerial&gt;&lt;/ds:X509Data&gt;&lt;/ds:KeyInfo&gt;&lt;ds:Object&gt;&lt;xades:QualifyingProperties xmlns:xades=&quot;http://uri.etsi.org/01903/v1.3.2#&quot;&gt;&lt;xades:SignedProperties Id=&quot;_baeadea7-dbed-435b-a9e8-be23f7b0997a-signedprops&quot;&gt;&lt;xades:SignedSignatureProperties&gt;&lt;xades:SigningTime&gt;2023-06-16T09:01:02Z&lt;/xades:SigningTime&gt;&lt;/xades:SignedSignatureProperties&gt;&lt;/xades:SignedProperties&gt;&lt;/xades:QualifyingProperties&gt;&lt;/ds:Object&gt;&lt;/ds:Signature&gt;&lt;/document:Sgntr&gt;&lt;/header:AppHdr&gt;&#xd;
+  &lt;document:Document&gt;&#xd;
+    &lt;document:FIToFICstmrCdtTrf&gt;&#xd;
+      &lt;document:GrpHdr&gt;&#xd;
+        &lt;document:MsgId&gt;BPCDM-B2023061603001404100000&lt;/document:MsgId&gt;&#xd;
+        &lt;document:CreDtTm&gt;2023-06-08T00:00:00.000+03:00&lt;/document:CreDtTm&gt;&#xd;
+        &lt;document:NbOfTxs&gt;1&lt;/document:NbOfTxs&gt;&#xd;
+        &lt;document:SttlmInf&gt;&#xd;
+          &lt;document:SttlmMtd&gt;CLRG&lt;/document:SttlmMtd&gt;&#xd;
+          &lt;document:ClrSys&gt;&#xd;
+            &lt;document:Prtry&gt;FP&lt;/document:Prtry&gt;&#xd;
+          &lt;/document:ClrSys&gt;&#xd;
+        &lt;/document:SttlmInf&gt;&#xd;
+        &lt;document:PmtTpInf&gt;&#xd;
+          &lt;document:LclInstrm&gt;&#xd;
+            &lt;document:Prtry&gt;P2P&lt;/document:Prtry&gt;&#xd;
+          &lt;/document:LclInstrm&gt;&#xd;
+        &lt;/document:PmtTpInf&gt;&#xd;
+        &lt;document:InstgAgt&gt;&#xd;
+          &lt;document:FinInstnId&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;BPCDM-B&lt;/document:Id&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:FinInstnId&gt;&#xd;
+        &lt;/document:InstgAgt&gt;&#xd;
+        &lt;document:InstdAgt&gt;&#xd;
+          &lt;document:FinInstnId&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;YBRD-B&lt;/document:Id&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:FinInstnId&gt;&#xd;
+        &lt;/document:InstdAgt&gt;&#xd;
+      &lt;/document:GrpHdr&gt;&#xd;
+      &lt;document:CdtTrfTxInf&gt;&#xd;
+        &lt;document:PmtId&gt;&#xd;
+          &lt;document:EndToEndId&gt;-&lt;/document:EndToEndId&gt;&#xd;
+          &lt;document:TxId&gt;BPCDM-B316712100000009401&lt;/document:TxId&gt;&#xd;
+        &lt;/document:PmtId&gt;&#xd;
+        &lt;document:IntrBkSttlmAmt Ccy=&quot;USD&quot;&gt;10&lt;/document:IntrBkSttlmAmt&gt;&#xd;
+        &lt;document:AccptncDtTm&gt;2023-06-12T17:02:39.071+06:00&lt;/document:AccptncDtTm&gt;&#xd;
+        &lt;document:InstdAmt Ccy=&quot;USD&quot;&gt;10&lt;/document:InstdAmt&gt;&#xd;
+        &lt;document:ChrgBr&gt;SLEV&lt;/document:ChrgBr&gt;&#xd;
+        &lt;document:Dbtr&gt;&#xd;
+          &lt;document:Nm&gt;MSCWT&lt;/document:Nm&gt;&#xd;
+          &lt;document:PstlAdr&gt;&#xd;
+            &lt;document:AdrLine&gt;MOSCOW&lt;/document:AdrLine&gt;&#xd;
+          &lt;/document:PstlAdr&gt;&#xd;
+        &lt;/document:Dbtr&gt;&#xd;
+        &lt;document:DbtrAcct&gt;&#xd;
+          &lt;document:Id&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;131234567890&lt;/document:Id&gt;&#xd;
+              &lt;document:SchmeNm&gt;&#xd;
+                &lt;document:Prtry&gt;ACCT&lt;/document:Prtry&gt;&#xd;
+              &lt;/document:SchmeNm&gt;&#xd;
+              &lt;document:Issr&gt;C&lt;/document:Issr&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:Id&gt;&#xd;
+        &lt;/document:DbtrAcct&gt;&#xd;
+        &lt;document:DbtrAgt&gt;&#xd;
+          &lt;document:FinInstnId&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;BPCDM-B&lt;/document:Id&gt;&#xd;
+              &lt;document:Issr&gt;ATM&lt;/document:Issr&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:FinInstnId&gt;&#xd;
+        &lt;/document:DbtrAgt&gt;&#xd;
+        &lt;document:CdtrAgt&gt;&#xd;
+          &lt;document:FinInstnId&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;YBRD-B&lt;/document:Id&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:FinInstnId&gt;&#xd;
+        &lt;/document:CdtrAgt&gt;&#xd;
+        &lt;document:Cdtr&gt;&#xd;
+          &lt;document:Nm&gt;test&lt;/document:Nm&gt;&#xd;
+        &lt;/document:Cdtr&gt;&#xd;
+        &lt;document:CdtrAcct&gt;&#xd;
+          &lt;document:Id&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;13123456789000&lt;/document:Id&gt;&#xd;
+              &lt;document:SchmeNm&gt;&#xd;
+                &lt;document:Prtry&gt;ACCT&lt;/document:Prtry&gt;&#xd;
+              &lt;/document:SchmeNm&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:Id&gt;&#xd;
+        &lt;/document:CdtrAcct&gt;&#xd;
+        &lt;document:RmtInf&gt;&#xd;
+          &lt;document:Ustrd&gt;Transferring my funds&lt;/document:Ustrd&gt;&#xd;
+        &lt;/document:RmtInf&gt;&#xd;
+      &lt;/document:CdtTrfTxInf&gt;&#xd;
+    &lt;/document:FIToFICstmrCdtTrf&gt;&#xd;
+  &lt;/document:Document&gt;&#xd;
+&lt;/FPEnvelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">9001</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/BPCDM/payment_push</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-type</stringProp>
+                <stringProp name="Header.value">application/xml</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">eyJhbGciOiJSUzUxMiIsInR5cCI6IkpPU0UiLCJ4NXQiOiJ5bVRaTDc2a1pUWUNhcjVsdWthVktaSmxHNmcifQ.eyJpc3MiOiIzNjAwMDEiLCJhdWQiOiIwMDAiLCJqdGkiOiIwZDY4NGI2Zi04ZWNjLTQwMTUtODFiYy03MTkzOGYxYmIyOWQiLCJhcGlrZXkiOiJhcGlrZXkiLCJhcGlzZWNyZXQiOiJhcGlzZWNyZXQifQ.aQdOGEwpfqfmR-awCxPhK9MyaUXqnxH4eut9TH8g9n56_wo5B-rUzYqqyNZClRNWcJHvSpGy9S_1kvVYdfIJi1UvTRzdWT3LnM2f-xqwmwNO3KytAZEiG8y-704X1djnxNyQDnXT7ThIPdrY0pe4noITfYSykOY6UbjXmSRN-YvF2tiM1GMuFu-rg4jwgK_mNLYhK0ejTy3gGHsGa9Vt8P9IINziGfSzQlzsRILf3xrziZHUWFJiy3Q9ykou7VL_dBFE9ovk_yVbpdY9BHZ3wcnlr1y99DwZWVlcD3ydOncIHddTvHgmAkyncrNbTFX14lcXOfH_zTs2_Xw2H0UMVA</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug PostProcessor" enabled="true">
+            <boolProp name="displayJMeterProperties">false</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySamplerProperties">true</boolProp>
+            <boolProp name="displaySystemProperties">false</boolProp>
+          </DebugPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="1.2.1 Request for payment push (C2C) to ENS - status request" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&#xd;
+&lt;FPEnvelope xmlns:header=&quot;urn:iso:std:iso:20022:tech:xsd:head.001.001.03&quot;&#xd;
+            xmlns:document=&quot;urn:iso:std:iso:20022:tech:xsd:pacs.028.001.05&quot;&#xd;
+            xmlns=&quot;urn:iso:std:iso:20022:tech:xsd:paymentStatus_request&quot;&gt;&#xd;
+    &lt;header:AppHdr&gt;&#xd;
+        &lt;header:Fr&gt;&#xd;
+            &lt;header:FIId&gt;&#xd;
+                &lt;header:FinInstnId&gt;&#xd;
+                    &lt;header:Othr&gt;&#xd;
+                        &lt;header:Id&gt;YBRD-B&lt;/header:Id&gt;&#xd;
+                    &lt;/header:Othr&gt;&#xd;
+                &lt;/header:FinInstnId&gt;&#xd;
+            &lt;/header:FIId&gt;&#xd;
+        &lt;/header:Fr&gt;&#xd;
+        &lt;header:To&gt;&#xd;
+            &lt;header:FIId&gt;&#xd;
+                &lt;header:FinInstnId&gt;&#xd;
+                    &lt;header:Othr&gt;&#xd;
+                        &lt;header:Id&gt;FP&lt;/header:Id&gt;&#xd;
+                    &lt;/header:Othr&gt;&#xd;
+                &lt;/header:FinInstnId&gt;&#xd;
+            &lt;/header:FIId&gt;&#xd;
+        &lt;/header:To&gt;&#xd;
+        &lt;header:BizMsgIdr&gt;YBRD-B${__time(yyyyMMddhhmmssSSSSSSSS)}&lt;/header:BizMsgIdr&gt;&#xd;
+        &lt;header:MsgDefIdr&gt;pacs.028.001.02&lt;/header:MsgDefIdr&gt;&#xd;
+        &lt;header:CreDt&gt;2023-06-01T10:00:00.000Z&lt;/header:CreDt&gt;&#xd;
+    &lt;/header:AppHdr&gt;&#xd;
+    &lt;document:Document&gt;&#xd;
+        &lt;document:FIToFIPmtStsReq&gt;&#xd;
+            &lt;document:GrpHdr&gt;&#xd;
+                &lt;document:MsgId&gt;YBRD-B${__time(yyyyMMddhhmmssSSSSSSSS)}&lt;/document:MsgId&gt;&#xd;
+                &lt;document:CreDtTm&gt;2023-06-01T13:00:00.000+03:00&lt;/document:CreDtTm&gt;&#xd;
+            &lt;/document:GrpHdr&gt;&#xd;
+            &lt;document:TxInf&gt;&#xd;
+                &lt;document:OrgnlTxId&gt;BPCDM-B316712100000009401&lt;/document:OrgnlTxId&gt;&#xd;
+            &lt;/document:TxInf&gt;&#xd;
+        &lt;/document:FIToFIPmtStsReq&gt;&#xd;
+    &lt;/document:Document&gt;&#xd;
+&lt;/FPEnvelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">9001</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/BPCDM/status_request</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-type</stringProp>
+                <stringProp name="Header.value">application/xml</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug PostProcessor" enabled="true">
+            <boolProp name="displayJMeterProperties">false</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySamplerProperties">true</boolProp>
+            <boolProp name="displaySystemProperties">false</boolProp>
+          </DebugPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="1.2.1 Request for return" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&#xd;
+&lt;FPEnvelope xmlns:header=&quot;urn:iso:std:iso:20022:tech:xsd:head.001.001.03&quot;&#xd;
+            xmlns:document=&quot;rn:iso:std:iso:20022:tech:xsd:pacs.004.001.11&quot;&#xd;
+            xmlns=&quot;urn:iso:std:iso:20022:tech:xsd:payment_cancellation_request&quot;&gt;&#xd;
+                &lt;header:AppHdr&gt;&#xd;
+        &lt;header:Fr&gt;&#xd;
+            &lt;header:FIId&gt;&#xd;
+                &lt;header:FinInstnId&gt;&#xd;
+                    &lt;header:Othr&gt;&#xd;
+                        &lt;header:Id&gt;YBRD-B&lt;/header:Id&gt;&#xd;
+                    &lt;/header:Othr&gt;&#xd;
+                &lt;/header:FinInstnId&gt;&#xd;
+            &lt;/header:FIId&gt;&#xd;
+        &lt;/header:Fr&gt;&#xd;
+        &lt;header:To&gt;&#xd;
+            &lt;header:FIId&gt;&#xd;
+                &lt;header:FinInstnId&gt;&#xd;
+                    &lt;header:Othr&gt;&#xd;
+                        &lt;header:Id&gt;FP&lt;/header:Id&gt;&#xd;
+                    &lt;/header:Othr&gt;&#xd;
+                &lt;/header:FinInstnId&gt;&#xd;
+            &lt;/header:FIId&gt;&#xd;
+        &lt;/header:To&gt;&#xd;
+        &lt;header:BizMsgIdr&gt;YBRD-B${__time(yyyyMMddhhmmssSSSSSSSS)}&lt;/header:BizMsgIdr&gt;&#xd;
+        &lt;header:MsgDefIdr&gt;pacs.004.001.11&lt;/header:MsgDefIdr&gt;&#xd;
+        &lt;header:CreDt&gt;2023-06-01T10:00:00.000Z&lt;/header:CreDt&gt;&#xd;
+    &lt;/header:AppHdr&gt;&#xd;
+&lt;Document&#xd;
+	xmlns=&quot;urn:iso:std:iso:20022:tech:xsd:pacs.004.001.11&quot;&gt;&#xd;
+	&lt;PmtRtr&gt;&#xd;
+		&lt;GrpHdr&gt;&#xd;
+			&lt;MsgId&gt;202305120001&lt;/MsgId&gt;&#xd;
+			&lt;CreDtTm&gt;2023-05-12T10:30:00&lt;/CreDtTm&gt;&#xd;
+			&lt;NbOfTxs&gt;1&lt;/NbOfTxs&gt;&#xd;
+			&lt;SttlmInf&gt;&#xd;
+				&lt;SttlmMtd&gt;CLRG&lt;/SttlmMtd&gt;&#xd;
+				&lt;ClrSys&gt;&#xd;
+					&lt;Prtry&gt;FP&lt;/Prtry&gt;&#xd;
+				&lt;/ClrSys&gt;&#xd;
+			&lt;/SttlmInf&gt;&#xd;
+			&lt;PmtTpInf&gt;&#xd;
+				&lt;LclInstrm&gt;&#xd;
+					&lt;Prtry&gt;С2С&lt;/Prtry&gt;&#xd;
+				&lt;/LclInstrm&gt;&#xd;
+			&lt;/PmtTpInf&gt;&#xd;
+			&lt;InstgAgt&gt;&#xd;
+				&lt;FinInstnId&gt;&#xd;
+					&lt;Othr&gt;&#xd;
+						&lt;Id&gt;YBRD-B&lt;/Id&gt;&#xd;
+					&lt;/Othr&gt;&#xd;
+				&lt;/FinInstnId&gt;&#xd;
+			&lt;/InstgAgt&gt;&#xd;
+			&lt;InstdAgt&gt;&#xd;
+				&lt;FinInstnId&gt;&#xd;
+					&lt;Othr&gt;&#xd;
+						&lt;Id&gt;BPCDM-B&lt;/Id&gt;&#xd;
+					&lt;/Othr&gt;&#xd;
+				&lt;/FinInstnId&gt;&#xd;
+			&lt;/InstdAgt&gt;&#xd;
+		&lt;/GrpHdr&gt;&#xd;
+		&lt;TxInf&gt;&#xd;
+			&lt;RtrId&gt;YBRD-B${__time(yyyyMMddhhmmssSSSSSSSS)}&lt;/RtrId&gt;&#xd;
+			&lt;OrgnlEndToEndId&gt;BPCDM-B316317100000009061&lt;/OrgnlEndToEndId&gt;&#xd;
+			&lt;OrgnlTxId&gt;BPCDM-B311713100000004073&lt;/OrgnlTxId&gt;&#xd;
+			&lt;RtrdIntrBkSttlmAmt Ccy=&quot;USD&quot;&gt;14&lt;/RtrdIntrBkSttlmAmt&gt;&#xd;
+			&lt;RtrRsnInf&gt;&#xd;
+				&lt;Rsn&gt;&#xd;
+					&lt;Prtry&gt;CHCK&lt;/Prtry&gt;&#xd;
+				&lt;/Rsn&gt;&#xd;
+				&lt;AddtlInf&gt;Maximum account balance exceeded&lt;/AddtlInf&gt;&#xd;
+			&lt;/RtrRsnInf&gt;&#xd;
+		&lt;/TxInf&gt;&#xd;
+	&lt;/PmtRtr&gt;&#xd;
+&lt;/Document&gt;&#xd;
+&lt;/FPEnvelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">192.168.20.45</stringProp>
+          <stringProp name="HTTPSampler.port">9001</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/YBRD/payment_return</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-type</stringProp>
+                <stringProp name="Header.value">application/xml</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug PostProcessor" enabled="true">
+            <boolProp name="displayJMeterProperties">false</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySamplerProperties">true</boolProp>
+            <boolProp name="displaySystemProperties">false</boolProp>
+          </DebugPostProcessor>
+          <hashTree/>
+          <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <url>true</url>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <url>true</url>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="1.2.1 Request for return MOCK" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&#xd;
+&lt;FPEnvelope xmlns:header=&quot;urn:iso:std:iso:20022:tech:xsd:head.001.001.03&quot;&#xd;
+            xmlns:document=&quot;rn:iso:std:iso:20022:tech:xsd:pacs.004.001.11&quot;&#xd;
+            xmlns=&quot;urn:iso:std:iso:20022:tech:xsd:payment_cancellation_request&quot;&gt;&#xd;
+                &lt;header:AppHdr&gt;&#xd;
+        &lt;header:Fr&gt;&#xd;
+            &lt;header:FIId&gt;&#xd;
+                &lt;header:FinInstnId&gt;&#xd;
+                    &lt;header:Othr&gt;&#xd;
+                        &lt;header:Id&gt;YBRD-B&lt;/header:Id&gt;&#xd;
+                    &lt;/header:Othr&gt;&#xd;
+                &lt;/header:FinInstnId&gt;&#xd;
+            &lt;/header:FIId&gt;&#xd;
+        &lt;/header:Fr&gt;&#xd;
+        &lt;header:To&gt;&#xd;
+            &lt;header:FIId&gt;&#xd;
+                &lt;header:FinInstnId&gt;&#xd;
+                    &lt;header:Othr&gt;&#xd;
+                        &lt;header:Id&gt;FP&lt;/header:Id&gt;&#xd;
+                    &lt;/header:Othr&gt;&#xd;
+                &lt;/header:FinInstnId&gt;&#xd;
+            &lt;/header:FIId&gt;&#xd;
+        &lt;/header:To&gt;&#xd;
+        &lt;header:BizMsgIdr&gt;YBRD-B${__time(yyyyMMddhhmmssSSSSSSSS)}&lt;/header:BizMsgIdr&gt;&#xd;
+        &lt;header:MsgDefIdr&gt;pacs.004.001.11&lt;/header:MsgDefIdr&gt;&#xd;
+        &lt;header:CreDt&gt;2023-06-01T10:00:00.000Z&lt;/header:CreDt&gt;&#xd;
+    &lt;/header:AppHdr&gt;&#xd;
+&lt;Document&#xd;
+	xmlns=&quot;urn:iso:std:iso:20022:tech:xsd:pacs.004.001.11&quot;&gt;&#xd;
+	&lt;PmtRtr&gt;&#xd;
+		&lt;GrpHdr&gt;&#xd;
+			&lt;MsgId&gt;202305120001&lt;/MsgId&gt;&#xd;
+			&lt;CreDtTm&gt;2023-05-12T10:30:00&lt;/CreDtTm&gt;&#xd;
+			&lt;NbOfTxs&gt;1&lt;/NbOfTxs&gt;&#xd;
+			&lt;SttlmInf&gt;&#xd;
+				&lt;SttlmMtd&gt;CLRG&lt;/SttlmMtd&gt;&#xd;
+				&lt;ClrSys&gt;&#xd;
+					&lt;Prtry&gt;FP&lt;/Prtry&gt;&#xd;
+				&lt;/ClrSys&gt;&#xd;
+			&lt;/SttlmInf&gt;&#xd;
+			&lt;PmtTpInf&gt;&#xd;
+				&lt;LclInstrm&gt;&#xd;
+					&lt;Prtry&gt;С2С&lt;/Prtry&gt;&#xd;
+				&lt;/LclInstrm&gt;&#xd;
+			&lt;/PmtTpInf&gt;&#xd;
+			&lt;InstgAgt&gt;&#xd;
+				&lt;FinInstnId&gt;&#xd;
+					&lt;Othr&gt;&#xd;
+						&lt;Id&gt;YBRD-B&lt;/Id&gt;&#xd;
+					&lt;/Othr&gt;&#xd;
+				&lt;/FinInstnId&gt;&#xd;
+			&lt;/InstgAgt&gt;&#xd;
+			&lt;InstdAgt&gt;&#xd;
+				&lt;FinInstnId&gt;&#xd;
+					&lt;Othr&gt;&#xd;
+						&lt;Id&gt;BPCDM-B&lt;/Id&gt;&#xd;
+					&lt;/Othr&gt;&#xd;
+				&lt;/FinInstnId&gt;&#xd;
+			&lt;/InstdAgt&gt;&#xd;
+		&lt;/GrpHdr&gt;&#xd;
+		&lt;TxInf&gt;&#xd;
+			&lt;RtrId&gt;YBRD-B${__time(yyyyMMddhhmmssSSSSSSSS)}&lt;/RtrId&gt;&#xd;
+			&lt;OrgnlEndToEndId&gt;BPCDM-B315012100000005035&lt;/OrgnlEndToEndId&gt;&#xd;
+			&lt;OrgnlTxId&gt;BPCDM-B309612100000004026&lt;/OrgnlTxId&gt;&#xd;
+			&lt;RtrdIntrBkSttlmAmt Ccy=&quot;USD&quot;&gt;14&lt;/RtrdIntrBkSttlmAmt&gt;&#xd;
+			&lt;RtrRsnInf&gt;&#xd;
+				&lt;Rsn&gt;&#xd;
+					&lt;Prtry&gt;CHCK&lt;/Prtry&gt;&#xd;
+				&lt;/Rsn&gt;&#xd;
+				&lt;AddtlInf&gt;Maximum account balance exceeded&lt;/AddtlInf&gt;&#xd;
+			&lt;/RtrRsnInf&gt;&#xd;
+		&lt;/TxInf&gt;&#xd;
+	&lt;/PmtRtr&gt;&#xd;
+&lt;/Document&gt;&#xd;
+&lt;/FPEnvelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">8083</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/PaymentReturn</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-type</stringProp>
+                <stringProp name="Header.value">application/xml</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug PostProcessor" enabled="true">
+            <boolProp name="displayJMeterProperties">false</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySamplerProperties">true</boolProp>
+            <boolProp name="displaySystemProperties">false</boolProp>
+          </DebugPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="1.2.1 Request for return Document" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;Document&#xd;
+	xmlns=&quot;urn:iso:std:iso:20022:tech:xsd:pacs.004.001.11&quot;&gt;&#xd;
+	&lt;PmtRtr&gt;&#xd;
+		&lt;GrpHdr&gt;&#xd;
+			&lt;MsgId&gt;202305120001&lt;/MsgId&gt;&#xd;
+			&lt;CreDtTm&gt;2023-05-12T10:30:00&lt;/CreDtTm&gt;&#xd;
+			&lt;NbOfTxs&gt;1&lt;/NbOfTxs&gt;&#xd;
+			&lt;SttlmInf&gt;&#xd;
+				&lt;SttlmMtd&gt;CLRG&lt;/SttlmMtd&gt;&#xd;
+				&lt;ClrSys&gt;&#xd;
+					&lt;Prtry&gt;FP&lt;/Prtry&gt;&#xd;
+				&lt;/ClrSys&gt;&#xd;
+			&lt;/SttlmInf&gt;&#xd;
+			&lt;PmtTpInf&gt;&#xd;
+				&lt;LclInstrm&gt;&#xd;
+					&lt;Prtry&gt;С2С&lt;/Prtry&gt;&#xd;
+				&lt;/LclInstrm&gt;&#xd;
+			&lt;/PmtTpInf&gt;&#xd;
+			&lt;InstgAgt&gt;&#xd;
+				&lt;FinInstnId&gt;&#xd;
+					&lt;Othr&gt;&#xd;
+						&lt;Id&gt;FI2_BIC&lt;/Id&gt;&#xd;
+					&lt;/Othr&gt;&#xd;
+				&lt;/FinInstnId&gt;&#xd;
+			&lt;/InstgAgt&gt;&#xd;
+			&lt;InstdAgt&gt;&#xd;
+				&lt;FinInstnId&gt;&#xd;
+					&lt;Othr&gt;&#xd;
+						&lt;Id&gt;FI1_BIC&lt;/Id&gt;&#xd;
+					&lt;/Othr&gt;&#xd;
+				&lt;/FinInstnId&gt;&#xd;
+			&lt;/InstdAgt&gt;&#xd;
+		&lt;/GrpHdr&gt;&#xd;
+		&lt;TxInf&gt;&#xd;
+			&lt;RtrId&gt;044525700810012123456789123423&lt;/RtrId&gt;&#xd;
+			&lt;OrgnlEndToEndId&gt;123456789345678&lt;/OrgnlEndToEndId&gt;&#xd;
+			&lt;OrgnlTxId&gt;9876543223456789&lt;/OrgnlTxId&gt;&#xd;
+			&lt;RtrdIntrBkSttlmAmt ccy=&quot;USD&quot;&gt;14.970&lt;/RtrdIntrBkSttlmAmt&gt;&#xd;
+			&lt;RtrRsnInf&gt;&#xd;
+				&lt;Rsn&gt;&#xd;
+					&lt;Prtry&gt;CHCK&lt;/Prtry&gt;&#xd;
+				&lt;/Rsn&gt;&#xd;
+				&lt;AddtlInf&gt;Maximum account balance exceeded&lt;/AddtlInf&gt;&#xd;
+			&lt;/RtrRsnInf&gt;&#xd;
+		&lt;/TxInf&gt;&#xd;
+	&lt;/PmtRtr&gt;&#xd;
+&lt;/Document&gt;&#xd;
+</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">9001</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/YBRD/payment_return</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-type</stringProp>
+                <stringProp name="Header.value">application/xml</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug PostProcessor" enabled="true">
+            <boolProp name="displayJMeterProperties">false</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySamplerProperties">true</boolProp>
+            <boolProp name="displaySystemProperties">false</boolProp>
+          </DebugPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="1.2.2 Request for payment push (C2C) to ENS - Rejected by receiver" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&#xd;
+&lt;FPEnvelope &#xd;
+  xmlns:header=&quot;urn:iso:std:iso:20022:tech:xsd:head.001.001.03&quot;&#xd;
+  xmlns:document=&quot;urn:iso:std:iso:20022:tech:xsd:pacs.008.001.10&quot;&#xd;
+  xmlns=&quot;urn:iso:std:iso:20022:tech:xsd:payment_request&quot;&gt;&#xd;
+  &lt;header:AppHdr&gt;&#xd;
+    &lt;header:Fr&gt;&#xd;
+      &lt;header:FIId&gt;&#xd;
+        &lt;header:FinInstnId&gt;&#xd;
+          &lt;header:Othr&gt;&#xd;
+            &lt;header:Id&gt;BPCDM-B&lt;/header:Id&gt;&#xd;
+          &lt;/header:Othr&gt;&#xd;
+        &lt;/header:FinInstnId&gt;&#xd;
+      &lt;/header:FIId&gt;&#xd;
+    &lt;/header:Fr&gt;&#xd;
+    &lt;header:To&gt;&#xd;
+      &lt;header:FIId&gt;&#xd;
+        &lt;header:FinInstnId&gt;&#xd;
+          &lt;header:Othr&gt;&#xd;
+            &lt;header:Id&gt;FP&lt;/header:Id&gt;&#xd;
+          &lt;/header:Othr&gt;&#xd;
+        &lt;/header:FinInstnId&gt;&#xd;
+      &lt;/header:FIId&gt;&#xd;
+    &lt;/header:To&gt;&#xd;
+    &lt;header:BizMsgIdr&gt;BPCDM-B${__time(yyyyMMddhhmmssSSSSSSSS)}&lt;/header:BizMsgIdr&gt;&#xd;
+    &lt;header:MsgDefIdr&gt;pacs.008.001.10&lt;/header:MsgDefIdr&gt;&#xd;
+    &lt;header:CreDt&gt;2023-04-04T00:00:00.000Z&lt;/header:CreDt&gt;&#xd;
+  &lt;/header:AppHdr&gt;&#xd;
+  &lt;document:Document&gt;&#xd;
+    &lt;document:FIToFICstmrCdtTrf&gt;&#xd;
+      &lt;document:GrpHdr&gt;&#xd;
+        &lt;document:MsgId&gt;BPCDM-B${__time(yyyyMMddhhmmssSSSSSSSS)}&lt;/document:MsgId&gt;&#xd;
+        &lt;document:CreDtTm&gt;2023-04-04T00:00:00.000+03:00&lt;/document:CreDtTm&gt;&#xd;
+        &lt;document:NbOfTxs&gt;1&lt;/document:NbOfTxs&gt;&#xd;
+        &lt;document:SttlmInf&gt;&#xd;
+          &lt;document:SttlmMtd&gt;CLRG&lt;/document:SttlmMtd&gt;&#xd;
+          &lt;document:ClrSys&gt;&#xd;
+            &lt;document:Prtry&gt;FP&lt;/document:Prtry&gt;&#xd;
+          &lt;/document:ClrSys&gt;&#xd;
+        &lt;/document:SttlmInf&gt;&#xd;
+        &lt;document:PmtTpInf&gt;&#xd;
+          &lt;document:LclInstrm&gt;&#xd;
+            &lt;document:Prtry&gt;P2P&lt;/document:Prtry&gt;&#xd;
+          &lt;/document:LclInstrm&gt;&#xd;
+        &lt;/document:PmtTpInf&gt;&#xd;
+        &lt;document:InstgAgt&gt;&#xd;
+          &lt;document:FinInstnId&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;BPCDM-B&lt;/document:Id&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:FinInstnId&gt;&#xd;
+        &lt;/document:InstgAgt&gt;&#xd;
+        &lt;document:InstdAgt&gt;&#xd;
+          &lt;document:FinInstnId&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;YBRD-B&lt;/document:Id&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:FinInstnId&gt;&#xd;
+        &lt;/document:InstdAgt&gt;&#xd;
+      &lt;/document:GrpHdr&gt;&#xd;
+      &lt;document:CdtTrfTxInf&gt;&#xd;
+        &lt;document:PmtId&gt;&#xd;
+          &lt;document:EndToEndId&gt;-&lt;/document:EndToEndId&gt;&#xd;
+          &lt;document:TxId&gt;${OrgnlId_g2}&lt;/document:TxId&gt;&#xd;
+        &lt;/document:PmtId&gt;&#xd;
+        &lt;document:IntrBkSttlmAmt Ccy=&quot;USD&quot;&gt;10&lt;/document:IntrBkSttlmAmt&gt;&#xd;
+        &lt;document:AccptncDtTm&gt;2023-04-04T17:42:39.071+06:00&lt;/document:AccptncDtTm&gt;&#xd;
+        &lt;document:InstdAmt Ccy=&quot;USD&quot;&gt;10&lt;/document:InstdAmt&gt;&#xd;
+        &lt;document:ChrgBr&gt;SLEV&lt;/document:ChrgBr&gt;&#xd;
+        &lt;document:Dbtr&gt;&#xd;
+          &lt;document:Nm&gt;MSCWT&lt;/document:Nm&gt;&#xd;
+          &lt;document:PstlAdr&gt;&#xd;
+            &lt;document:AdrLine&gt;MOSCOW&lt;/document:AdrLine&gt;&#xd;
+          &lt;/document:PstlAdr&gt;&#xd;
+        &lt;/document:Dbtr&gt;&#xd;
+        &lt;document:DbtrAcct&gt;&#xd;
+          &lt;document:Id&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;12345678900&lt;/document:Id&gt;&#xd;
+              &lt;document:SchmeNm&gt;&#xd;
+                &lt;document:Prtry&gt;ACCT&lt;/document:Prtry&gt;&#xd;
+              &lt;/document:SchmeNm&gt;&#xd;
+              &lt;document:Issr&gt;C&lt;/document:Issr&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:Id&gt;&#xd;
+        &lt;/document:DbtrAcct&gt;&#xd;
+        &lt;document:DbtrAgt&gt;&#xd;
+          &lt;document:FinInstnId&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;BPCDM-B&lt;/document:Id&gt;&#xd;
+              &lt;document:Issr&gt;ATM&lt;/document:Issr&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:FinInstnId&gt;&#xd;
+        &lt;/document:DbtrAgt&gt;&#xd;
+        &lt;document:CdtrAgt&gt;&#xd;
+          &lt;document:FinInstnId&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;YBRD-B&lt;/document:Id&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:FinInstnId&gt;&#xd;
+        &lt;/document:CdtrAgt&gt;&#xd;
+        &lt;document:Cdtr&gt;&#xd;
+          &lt;document:Nm&gt;test&lt;/document:Nm&gt;&#xd;
+        &lt;/document:Cdtr&gt;&#xd;
+        &lt;document:CdtrAcct&gt;&#xd;
+          &lt;document:Id&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;777564035&lt;/document:Id&gt;&#xd;
+              &lt;document:SchmeNm&gt;&#xd;
+                &lt;document:Prtry&gt;ACCT&lt;/document:Prtry&gt;&#xd;
+              &lt;/document:SchmeNm&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:Id&gt;&#xd;
+        &lt;/document:CdtrAcct&gt;&#xd;
+        &lt;document:RmtInf&gt;&#xd;
+          &lt;document:Ustrd&gt;Transferring my funds&lt;/document:Ustrd&gt;&#xd;
+        &lt;/document:RmtInf&gt;&#xd;
+      &lt;/document:CdtTrfTxInf&gt;&#xd;
+    &lt;/document:FIToFICstmrCdtTrf&gt;&#xd;
+  &lt;/document:Document&gt;&#xd;
+&lt;/FPEnvelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">9001</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/xml_sign</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-type</stringProp>
+                <stringProp name="Header.value">application/xml</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">704X1djnxNyQDnXT7ThIPdrY0pe4noITfYSykOY6UbjXmSRN-YvF2tiM1GMuFu-rg4jwgK_mNLYhK0ejTy3gGHsGa9Vt8P9IINziGfSzQlzsRILf3xrziZHUWFJiy3Q9ykou7VL_dBFE9ovk_yVbpdY9BHZ3wcnlr1y99DwZWVlcD3ydOncIHddTvHgmAkyncrNbTFX14lcXOfH_zTs2</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug PostProcessor" enabled="true">
+            <boolProp name="displayJMeterProperties">false</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySamplerProperties">true</boolProp>
+            <boolProp name="displaySystemProperties">false</boolProp>
+          </DebugPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="1.2.3 Request for payment push (C2C) to ENS - WRONG BIC" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&#xd;
+&lt;FPEnvelope &#xd;
+  xmlns:header=&quot;urn:iso:std:iso:20022:tech:xsd:head.001.001.03&quot;&#xd;
+  xmlns:document=&quot;urn:iso:std:iso:20022:tech:xsd:pacs.008.001.10&quot;&#xd;
+  xmlns=&quot;urn:iso:std:iso:20022:tech:xsd:payment_request&quot;&gt;&#xd;
+  &lt;header:AppHdr&gt;&#xd;
+    &lt;header:Fr&gt;&#xd;
+      &lt;header:FIId&gt;&#xd;
+        &lt;header:FinInstnId&gt;&#xd;
+          &lt;header:Othr&gt;&#xd;
+            &lt;header:Id&gt;BPCDM-B&lt;/header:Id&gt;&#xd;
+          &lt;/header:Othr&gt;&#xd;
+        &lt;/header:FinInstnId&gt;&#xd;
+      &lt;/header:FIId&gt;&#xd;
+    &lt;/header:Fr&gt;&#xd;
+    &lt;header:To&gt;&#xd;
+      &lt;header:FIId&gt;&#xd;
+        &lt;header:FinInstnId&gt;&#xd;
+          &lt;header:Othr&gt;&#xd;
+            &lt;header:Id&gt;FP&lt;/header:Id&gt;&#xd;
+          &lt;/header:Othr&gt;&#xd;
+        &lt;/header:FinInstnId&gt;&#xd;
+      &lt;/header:FIId&gt;&#xd;
+    &lt;/header:To&gt;&#xd;
+    &lt;header:BizMsgIdr&gt;BPCDM-B${__time(yyyyMMddhhmmssSSSSSSSS)}&lt;/header:BizMsgIdr&gt;&#xd;
+    &lt;header:MsgDefIdr&gt;pacs.008.001.10&lt;/header:MsgDefIdr&gt;&#xd;
+    &lt;header:CreDt&gt;2023-04-04T00:00:00.000Z&lt;/header:CreDt&gt;&#xd;
+  &lt;/header:AppHdr&gt;&#xd;
+  &lt;document:Document&gt;&#xd;
+    &lt;document:FIToFICstmrCdtTrf&gt;&#xd;
+      &lt;document:GrpHdr&gt;&#xd;
+        &lt;document:MsgId&gt;BPCDM-B${__time(yyyyMMddhhmmssSSSSSSSS)}&lt;/document:MsgId&gt;&#xd;
+        &lt;document:CreDtTm&gt;2023-04-04T00:00:00.000+03:00&lt;/document:CreDtTm&gt;&#xd;
+        &lt;document:NbOfTxs&gt;1&lt;/document:NbOfTxs&gt;&#xd;
+        &lt;document:SttlmInf&gt;&#xd;
+          &lt;document:SttlmMtd&gt;CLRG&lt;/document:SttlmMtd&gt;&#xd;
+          &lt;document:ClrSys&gt;&#xd;
+            &lt;document:Prtry&gt;FP&lt;/document:Prtry&gt;&#xd;
+          &lt;/document:ClrSys&gt;&#xd;
+        &lt;/document:SttlmInf&gt;&#xd;
+        &lt;document:PmtTpInf&gt;&#xd;
+          &lt;document:LclInstrm&gt;&#xd;
+            &lt;document:Prtry&gt;P2P&lt;/document:Prtry&gt;&#xd;
+          &lt;/document:LclInstrm&gt;&#xd;
+        &lt;/document:PmtTpInf&gt;&#xd;
+        &lt;document:InstgAgt&gt;&#xd;
+          &lt;document:FinInstnId&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;BPCDM-B&lt;/document:Id&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:FinInstnId&gt;&#xd;
+        &lt;/document:InstgAgt&gt;&#xd;
+        &lt;document:InstdAgt&gt;&#xd;
+          &lt;document:FinInstnId&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;YBRD-WR&lt;/document:Id&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:FinInstnId&gt;&#xd;
+        &lt;/document:InstdAgt&gt;&#xd;
+      &lt;/document:GrpHdr&gt;&#xd;
+      &lt;document:CdtTrfTxInf&gt;&#xd;
+        &lt;document:PmtId&gt;&#xd;
+          &lt;document:EndToEndId&gt;-&lt;/document:EndToEndId&gt;&#xd;
+          &lt;document:TxId&gt;${OrgnlId_g2}&lt;/document:TxId&gt;&#xd;
+        &lt;/document:PmtId&gt;&#xd;
+        &lt;document:IntrBkSttlmAmt Ccy=&quot;USD&quot;&gt;10&lt;/document:IntrBkSttlmAmt&gt;&#xd;
+        &lt;document:AccptncDtTm&gt;2023-04-04T17:42:39.071+06:00&lt;/document:AccptncDtTm&gt;&#xd;
+        &lt;document:InstdAmt Ccy=&quot;USD&quot;&gt;10&lt;/document:InstdAmt&gt;&#xd;
+        &lt;document:ChrgBr&gt;SLEV&lt;/document:ChrgBr&gt;&#xd;
+        &lt;document:Dbtr&gt;&#xd;
+          &lt;document:Nm&gt;MSCWT&lt;/document:Nm&gt;&#xd;
+          &lt;document:PstlAdr&gt;&#xd;
+            &lt;document:AdrLine&gt;MOSCOW&lt;/document:AdrLine&gt;&#xd;
+          &lt;/document:PstlAdr&gt;&#xd;
+        &lt;/document:Dbtr&gt;&#xd;
+        &lt;document:DbtrAcct&gt;&#xd;
+          &lt;document:Id&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;12345678900&lt;/document:Id&gt;&#xd;
+              &lt;document:SchmeNm&gt;&#xd;
+                &lt;document:Prtry&gt;ACCT&lt;/document:Prtry&gt;&#xd;
+              &lt;/document:SchmeNm&gt;&#xd;
+              &lt;document:Issr&gt;C&lt;/document:Issr&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:Id&gt;&#xd;
+        &lt;/document:DbtrAcct&gt;&#xd;
+        &lt;document:DbtrAgt&gt;&#xd;
+          &lt;document:FinInstnId&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;BPCDM-B&lt;/document:Id&gt;&#xd;
+              &lt;document:Issr&gt;ATM&lt;/document:Issr&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:FinInstnId&gt;&#xd;
+        &lt;/document:DbtrAgt&gt;&#xd;
+        &lt;document:CdtrAgt&gt;&#xd;
+          &lt;document:FinInstnId&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;YBRD-BWR&lt;/document:Id&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:FinInstnId&gt;&#xd;
+        &lt;/document:CdtrAgt&gt;&#xd;
+        &lt;document:Cdtr&gt;&#xd;
+          &lt;document:Nm&gt;test&lt;/document:Nm&gt;&#xd;
+        &lt;/document:Cdtr&gt;&#xd;
+        &lt;document:CdtrAcct&gt;&#xd;
+          &lt;document:Id&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;77756403500&lt;/document:Id&gt;&#xd;
+              &lt;document:SchmeNm&gt;&#xd;
+                &lt;document:Prtry&gt;ACCT&lt;/document:Prtry&gt;&#xd;
+              &lt;/document:SchmeNm&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:Id&gt;&#xd;
+        &lt;/document:CdtrAcct&gt;&#xd;
+        &lt;document:RmtInf&gt;&#xd;
+          &lt;document:Ustrd&gt;Transferring my funds&lt;/document:Ustrd&gt;&#xd;
+        &lt;/document:RmtInf&gt;&#xd;
+      &lt;/document:CdtTrfTxInf&gt;&#xd;
+    &lt;/document:FIToFICstmrCdtTrf&gt;&#xd;
+  &lt;/document:Document&gt;&#xd;
+&lt;/FPEnvelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">9001</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/xml_sign</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-type</stringProp>
+                <stringProp name="Header.value">application/xml</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">704X1djnxNyQDnXT7ThIPdrY0pe4noITfYSykOY6UbjXmSRN-YvF2tiM1GMuFu-rg4jwgK_mNLYhK0ejTy3gGHsGa9Vt8P9IINziGfSzQlzsRILf3xrziZHUWFJiy3Q9ykou7VL_dBFE9ovk_yVbpdY9BHZ3wcnlr1y99DwZWVlcD3ydOncIHddTvHgmAkyncrNbTFX14lcXOfH_zTs2</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug PostProcessor" enabled="true">
+            <boolProp name="displayJMeterProperties">false</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySamplerProperties">true</boolProp>
+            <boolProp name="displaySystemProperties">false</boolProp>
+          </DebugPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="1.2.4 Request for payment push (C2C) to ENS - Insufficient fund" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&#xd;
+&lt;FPEnvelope &#xd;
+  xmlns:header=&quot;urn:iso:std:iso:20022:tech:xsd:head.001.001.03&quot;&#xd;
+  xmlns:document=&quot;urn:iso:std:iso:20022:tech:xsd:pacs.008.001.10&quot;&#xd;
+  xmlns=&quot;urn:iso:std:iso:20022:tech:xsd:payment_request&quot;&gt;&#xd;
+  &lt;header:AppHdr&gt;&#xd;
+    &lt;header:Fr&gt;&#xd;
+      &lt;header:FIId&gt;&#xd;
+        &lt;header:FinInstnId&gt;&#xd;
+          &lt;header:Othr&gt;&#xd;
+            &lt;header:Id&gt;BPCDM-B&lt;/header:Id&gt;&#xd;
+          &lt;/header:Othr&gt;&#xd;
+        &lt;/header:FinInstnId&gt;&#xd;
+      &lt;/header:FIId&gt;&#xd;
+    &lt;/header:Fr&gt;&#xd;
+    &lt;header:To&gt;&#xd;
+      &lt;header:FIId&gt;&#xd;
+        &lt;header:FinInstnId&gt;&#xd;
+          &lt;header:Othr&gt;&#xd;
+            &lt;header:Id&gt;FP&lt;/header:Id&gt;&#xd;
+          &lt;/header:Othr&gt;&#xd;
+        &lt;/header:FinInstnId&gt;&#xd;
+      &lt;/header:FIId&gt;&#xd;
+    &lt;/header:To&gt;&#xd;
+    &lt;header:BizMsgIdr&gt;BPCDM-B${__time(yyyyMMddhhmmssSSSSSSSS)}&lt;/header:BizMsgIdr&gt;&#xd;
+    &lt;header:MsgDefIdr&gt;pacs.008.001.10&lt;/header:MsgDefIdr&gt;&#xd;
+    &lt;header:CreDt&gt;2023-04-04T00:00:00.000Z&lt;/header:CreDt&gt;&#xd;
+  &lt;/header:AppHdr&gt;&#xd;
+  &lt;document:Document&gt;&#xd;
+    &lt;document:FIToFICstmrCdtTrf&gt;&#xd;
+      &lt;document:GrpHdr&gt;&#xd;
+        &lt;document:MsgId&gt;BPCDM-B${__time(yyyyMMddhhmmssSSSSSSSS)}&lt;/document:MsgId&gt;&#xd;
+        &lt;document:CreDtTm&gt;2023-04-04T00:00:00.000+03:00&lt;/document:CreDtTm&gt;&#xd;
+        &lt;document:NbOfTxs&gt;1&lt;/document:NbOfTxs&gt;&#xd;
+        &lt;document:SttlmInf&gt;&#xd;
+          &lt;document:SttlmMtd&gt;CLRG&lt;/document:SttlmMtd&gt;&#xd;
+          &lt;document:ClrSys&gt;&#xd;
+            &lt;document:Prtry&gt;FP&lt;/document:Prtry&gt;&#xd;
+          &lt;/document:ClrSys&gt;&#xd;
+        &lt;/document:SttlmInf&gt;&#xd;
+        &lt;document:PmtTpInf&gt;&#xd;
+          &lt;document:LclInstrm&gt;&#xd;
+            &lt;document:Prtry&gt;P2P&lt;/document:Prtry&gt;&#xd;
+          &lt;/document:LclInstrm&gt;&#xd;
+        &lt;/document:PmtTpInf&gt;&#xd;
+        &lt;document:InstgAgt&gt;&#xd;
+          &lt;document:FinInstnId&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;BPCDM-B&lt;/document:Id&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:FinInstnId&gt;&#xd;
+        &lt;/document:InstgAgt&gt;&#xd;
+        &lt;document:InstdAgt&gt;&#xd;
+          &lt;document:FinInstnId&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;YBRD-B&lt;/document:Id&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:FinInstnId&gt;&#xd;
+        &lt;/document:InstdAgt&gt;&#xd;
+      &lt;/document:GrpHdr&gt;&#xd;
+      &lt;document:CdtTrfTxInf&gt;&#xd;
+        &lt;document:PmtId&gt;&#xd;
+          &lt;document:EndToEndId&gt;-&lt;/document:EndToEndId&gt;&#xd;
+          &lt;document:TxId&gt;${OrgnlId_g2}&lt;/document:TxId&gt;&#xd;
+        &lt;/document:PmtId&gt;&#xd;
+        &lt;document:IntrBkSttlmAmt Ccy=&quot;USD&quot;&gt;10&lt;/document:IntrBkSttlmAmt&gt;&#xd;
+        &lt;document:AccptncDtTm&gt;2023-04-04T17:42:39.071+06:00&lt;/document:AccptncDtTm&gt;&#xd;
+        &lt;document:InstdAmt Ccy=&quot;USD&quot;&gt;1000000&lt;/document:InstdAmt&gt;&#xd;
+        &lt;document:ChrgBr&gt;SLEV&lt;/document:ChrgBr&gt;&#xd;
+        &lt;document:Dbtr&gt;&#xd;
+          &lt;document:Nm&gt;MSCWT&lt;/document:Nm&gt;&#xd;
+          &lt;document:PstlAdr&gt;&#xd;
+            &lt;document:AdrLine&gt;MOSCOW&lt;/document:AdrLine&gt;&#xd;
+          &lt;/document:PstlAdr&gt;&#xd;
+        &lt;/document:Dbtr&gt;&#xd;
+        &lt;document:DbtrAcct&gt;&#xd;
+          &lt;document:Id&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;131234567890&lt;/document:Id&gt;&#xd;
+              &lt;document:SchmeNm&gt;&#xd;
+                &lt;document:Prtry&gt;ACCT&lt;/document:Prtry&gt;&#xd;
+              &lt;/document:SchmeNm&gt;&#xd;
+              &lt;document:Issr&gt;C&lt;/document:Issr&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:Id&gt;&#xd;
+        &lt;/document:DbtrAcct&gt;&#xd;
+        &lt;document:DbtrAgt&gt;&#xd;
+          &lt;document:FinInstnId&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;BPCDM-B&lt;/document:Id&gt;&#xd;
+              &lt;document:Issr&gt;ATM&lt;/document:Issr&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:FinInstnId&gt;&#xd;
+        &lt;/document:DbtrAgt&gt;&#xd;
+        &lt;document:CdtrAgt&gt;&#xd;
+          &lt;document:FinInstnId&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;YBRD-B&lt;/document:Id&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:FinInstnId&gt;&#xd;
+        &lt;/document:CdtrAgt&gt;&#xd;
+        &lt;document:Cdtr&gt;&#xd;
+          &lt;document:Nm&gt;test&lt;/document:Nm&gt;&#xd;
+        &lt;/document:Cdtr&gt;&#xd;
+        &lt;document:CdtrAcct&gt;&#xd;
+          &lt;document:Id&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;131234567890&lt;/document:Id&gt;&#xd;
+              &lt;document:SchmeNm&gt;&#xd;
+                &lt;document:Prtry&gt;ACCT&lt;/document:Prtry&gt;&#xd;
+              &lt;/document:SchmeNm&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:Id&gt;&#xd;
+        &lt;/document:CdtrAcct&gt;&#xd;
+        &lt;document:RmtInf&gt;&#xd;
+          &lt;document:Ustrd&gt;Transferring my funds&lt;/document:Ustrd&gt;&#xd;
+        &lt;/document:RmtInf&gt;&#xd;
+      &lt;/document:CdtTrfTxInf&gt;&#xd;
+    &lt;/document:FIToFICstmrCdtTrf&gt;&#xd;
+  &lt;/document:Document&gt;&#xd;
+&lt;/FPEnvelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">9001</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/xml_sign</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-type</stringProp>
+                <stringProp name="Header.value">application/xml</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">704X1djnxNyQDnXT7ThIPdrY0pe4noITfYSykOY6UbjXmSRN-YvF2tiM1GMuFu-rg4jwgK_mNLYhK0ejTy3gGHsGa9Vt8P9IINziGfSzQlzsRILf3xrziZHUWFJiy3Q9ykou7VL_dBFE9ovk_yVbpdY9BHZ3wcnlr1y99DwZWVlcD3ydOncIHddTvHgmAkyncrNbTFX14lcXOfH_zTs2</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug PostProcessor" enabled="true">
+            <boolProp name="displayJMeterProperties">false</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySamplerProperties">true</boolProp>
+            <boolProp name="displaySystemProperties">false</boolProp>
+          </DebugPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="1.2.5 Request for payment push (C2C) to ENS - Timeout response" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&#xd;
+&lt;FPEnvelope &#xd;
+  xmlns:header=&quot;urn:iso:std:iso:20022:tech:xsd:head.001.001.03&quot;&#xd;
+  xmlns:document=&quot;urn:iso:std:iso:20022:tech:xsd:pacs.008.001.10&quot;&#xd;
+  xmlns=&quot;urn:iso:std:iso:20022:tech:xsd:payment_request&quot;&gt;&#xd;
+  &lt;header:AppHdr&gt;&#xd;
+    &lt;header:Fr&gt;&#xd;
+      &lt;header:FIId&gt;&#xd;
+        &lt;header:FinInstnId&gt;&#xd;
+          &lt;header:Othr&gt;&#xd;
+            &lt;header:Id&gt;BPCDM-B&lt;/header:Id&gt;&#xd;
+          &lt;/header:Othr&gt;&#xd;
+        &lt;/header:FinInstnId&gt;&#xd;
+      &lt;/header:FIId&gt;&#xd;
+    &lt;/header:Fr&gt;&#xd;
+    &lt;header:To&gt;&#xd;
+      &lt;header:FIId&gt;&#xd;
+        &lt;header:FinInstnId&gt;&#xd;
+          &lt;header:Othr&gt;&#xd;
+            &lt;header:Id&gt;FP&lt;/header:Id&gt;&#xd;
+          &lt;/header:Othr&gt;&#xd;
+        &lt;/header:FinInstnId&gt;&#xd;
+      &lt;/header:FIId&gt;&#xd;
+    &lt;/header:To&gt;&#xd;
+    &lt;header:BizMsgIdr&gt;BPCDM-B${__time(yyyyMMddhhmmssSSSSSSSS)}&lt;/header:BizMsgIdr&gt;&#xd;
+    &lt;header:MsgDefIdr&gt;pacs.008.001.10&lt;/header:MsgDefIdr&gt;&#xd;
+    &lt;header:CreDt&gt;2023-04-04T00:00:00.000Z&lt;/header:CreDt&gt;&#xd;
+  &lt;/header:AppHdr&gt;&#xd;
+  &lt;document:Document&gt;&#xd;
+    &lt;document:FIToFICstmrCdtTrf&gt;&#xd;
+      &lt;document:GrpHdr&gt;&#xd;
+        &lt;document:MsgId&gt;BPCDM-B${__time(yyyyMMddhhmmssSSSSSSSS)}&lt;/document:MsgId&gt;&#xd;
+        &lt;document:CreDtTm&gt;2023-04-04T00:00:00.000+03:00&lt;/document:CreDtTm&gt;&#xd;
+        &lt;document:NbOfTxs&gt;1&lt;/document:NbOfTxs&gt;&#xd;
+        &lt;document:SttlmInf&gt;&#xd;
+          &lt;document:SttlmMtd&gt;CLRG&lt;/document:SttlmMtd&gt;&#xd;
+          &lt;document:ClrSys&gt;&#xd;
+            &lt;document:Prtry&gt;FP&lt;/document:Prtry&gt;&#xd;
+          &lt;/document:ClrSys&gt;&#xd;
+        &lt;/document:SttlmInf&gt;&#xd;
+        &lt;document:PmtTpInf&gt;&#xd;
+          &lt;document:LclInstrm&gt;&#xd;
+            &lt;document:Prtry&gt;P2P&lt;/document:Prtry&gt;&#xd;
+          &lt;/document:LclInstrm&gt;&#xd;
+        &lt;/document:PmtTpInf&gt;&#xd;
+        &lt;document:InstgAgt&gt;&#xd;
+          &lt;document:FinInstnId&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;BPCDM-B&lt;/document:Id&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:FinInstnId&gt;&#xd;
+        &lt;/document:InstgAgt&gt;&#xd;
+        &lt;document:InstdAgt&gt;&#xd;
+          &lt;document:FinInstnId&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;YBRD-B&lt;/document:Id&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:FinInstnId&gt;&#xd;
+        &lt;/document:InstdAgt&gt;&#xd;
+      &lt;/document:GrpHdr&gt;&#xd;
+      &lt;document:CdtTrfTxInf&gt;&#xd;
+        &lt;document:PmtId&gt;&#xd;
+          &lt;document:EndToEndId&gt;-&lt;/document:EndToEndId&gt;&#xd;
+          &lt;document:TxId&gt;${OrgnlId_g2}&lt;/document:TxId&gt;&#xd;
+        &lt;/document:PmtId&gt;&#xd;
+        &lt;document:IntrBkSttlmAmt Ccy=&quot;USD&quot;&gt;10&lt;/document:IntrBkSttlmAmt&gt;&#xd;
+        &lt;document:AccptncDtTm&gt;2023-04-04T17:42:39.071+06:00&lt;/document:AccptncDtTm&gt;&#xd;
+        &lt;document:InstdAmt Ccy=&quot;USD&quot;&gt;10&lt;/document:InstdAmt&gt;&#xd;
+        &lt;document:ChrgBr&gt;SLEV&lt;/document:ChrgBr&gt;&#xd;
+        &lt;document:Dbtr&gt;&#xd;
+          &lt;document:Nm&gt;MSCWT&lt;/document:Nm&gt;&#xd;
+          &lt;document:PstlAdr&gt;&#xd;
+            &lt;document:AdrLine&gt;MOSCOW&lt;/document:AdrLine&gt;&#xd;
+          &lt;/document:PstlAdr&gt;&#xd;
+        &lt;/document:Dbtr&gt;&#xd;
+        &lt;document:DbtrAcct&gt;&#xd;
+          &lt;document:Id&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;131234567890&lt;/document:Id&gt;&#xd;
+              &lt;document:SchmeNm&gt;&#xd;
+                &lt;document:Prtry&gt;ACCT&lt;/document:Prtry&gt;&#xd;
+              &lt;/document:SchmeNm&gt;&#xd;
+              &lt;document:Issr&gt;C&lt;/document:Issr&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:Id&gt;&#xd;
+        &lt;/document:DbtrAcct&gt;&#xd;
+        &lt;document:DbtrAgt&gt;&#xd;
+          &lt;document:FinInstnId&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;BPCDM-B&lt;/document:Id&gt;&#xd;
+              &lt;document:Issr&gt;ATM&lt;/document:Issr&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:FinInstnId&gt;&#xd;
+        &lt;/document:DbtrAgt&gt;&#xd;
+        &lt;document:CdtrAgt&gt;&#xd;
+          &lt;document:FinInstnId&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;YBRD-B&lt;/document:Id&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:FinInstnId&gt;&#xd;
+        &lt;/document:CdtrAgt&gt;&#xd;
+        &lt;document:Cdtr&gt;&#xd;
+          &lt;document:Nm&gt;test&lt;/document:Nm&gt;&#xd;
+        &lt;/document:Cdtr&gt;&#xd;
+        &lt;document:CdtrAcct&gt;&#xd;
+          &lt;document:Id&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;131234567890&lt;/document:Id&gt;&#xd;
+              &lt;document:SchmeNm&gt;&#xd;
+                &lt;document:Prtry&gt;ACCT&lt;/document:Prtry&gt;&#xd;
+              &lt;/document:SchmeNm&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:Id&gt;&#xd;
+        &lt;/document:CdtrAcct&gt;&#xd;
+        &lt;document:RmtInf&gt;&#xd;
+          &lt;document:Ustrd&gt;Transferring my funds&lt;/document:Ustrd&gt;&#xd;
+        &lt;/document:RmtInf&gt;&#xd;
+      &lt;/document:CdtTrfTxInf&gt;&#xd;
+    &lt;/document:FIToFICstmrCdtTrf&gt;&#xd;
+  &lt;/document:Document&gt;&#xd;
+&lt;/FPEnvelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">9001</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/xml_sign</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-type</stringProp>
+                <stringProp name="Header.value">application/xml</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">704X1djnxNyQDnXT7ThIPdrY0pe4noITfYSykOY6UbjXmSRN-YvF2tiM1GMuFu-rg4jwgK_mNLYhK0ejTy3gGHsGa9Vt8P9IINziGfSzQlzsRILf3xrziZHUWFJiy3Q9ykou7VL_dBFE9ovk_yVbpdY9BHZ3wcnlr1y99DwZWVlcD3ydOncIHddTvHgmAkyncrNbTFX14lcXOfH_zTs2</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug PostProcessor" enabled="true">
+            <boolProp name="displayJMeterProperties">false</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySamplerProperties">true</boolProp>
+            <boolProp name="displaySystemProperties">false</boolProp>
+          </DebugPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="1.2.6 Request for payment push (C2C) to ENS - Rejected by FM" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&#xd;
+&lt;FPEnvelope &#xd;
+  xmlns:header=&quot;urn:iso:std:iso:20022:tech:xsd:head.001.001.03&quot;&#xd;
+  xmlns:document=&quot;urn:iso:std:iso:20022:tech:xsd:pacs.008.001.10&quot;&#xd;
+  xmlns=&quot;urn:iso:std:iso:20022:tech:xsd:payment_request&quot;&gt;&#xd;
+  &lt;header:AppHdr&gt;&#xd;
+    &lt;header:Fr&gt;&#xd;
+      &lt;header:FIId&gt;&#xd;
+        &lt;header:FinInstnId&gt;&#xd;
+          &lt;header:Othr&gt;&#xd;
+            &lt;header:Id&gt;BPCDM-B&lt;/header:Id&gt;&#xd;
+          &lt;/header:Othr&gt;&#xd;
+        &lt;/header:FinInstnId&gt;&#xd;
+      &lt;/header:FIId&gt;&#xd;
+    &lt;/header:Fr&gt;&#xd;
+    &lt;header:To&gt;&#xd;
+      &lt;header:FIId&gt;&#xd;
+        &lt;header:FinInstnId&gt;&#xd;
+          &lt;header:Othr&gt;&#xd;
+            &lt;header:Id&gt;FP&lt;/header:Id&gt;&#xd;
+          &lt;/header:Othr&gt;&#xd;
+        &lt;/header:FinInstnId&gt;&#xd;
+      &lt;/header:FIId&gt;&#xd;
+    &lt;/header:To&gt;&#xd;
+    &lt;header:BizMsgIdr&gt;BPCDM-B${__time(yyyyMMddhhmmssSSSSSSSS)}&lt;/header:BizMsgIdr&gt;&#xd;
+    &lt;header:MsgDefIdr&gt;pacs.008.001.10&lt;/header:MsgDefIdr&gt;&#xd;
+    &lt;header:CreDt&gt;2023-04-04T00:00:00.000Z&lt;/header:CreDt&gt;&#xd;
+  &lt;/header:AppHdr&gt;&#xd;
+  &lt;document:Document&gt;&#xd;
+    &lt;document:FIToFICstmrCdtTrf&gt;&#xd;
+      &lt;document:GrpHdr&gt;&#xd;
+        &lt;document:MsgId&gt;BPCDM-B${__time(yyyyMMddhhmmssSSSSSSSS)}&lt;/document:MsgId&gt;&#xd;
+        &lt;document:CreDtTm&gt;2023-04-04T00:00:00.000+03:00&lt;/document:CreDtTm&gt;&#xd;
+        &lt;document:NbOfTxs&gt;1&lt;/document:NbOfTxs&gt;&#xd;
+        &lt;document:SttlmInf&gt;&#xd;
+          &lt;document:SttlmMtd&gt;CLRG&lt;/document:SttlmMtd&gt;&#xd;
+          &lt;document:ClrSys&gt;&#xd;
+            &lt;document:Prtry&gt;FP&lt;/document:Prtry&gt;&#xd;
+          &lt;/document:ClrSys&gt;&#xd;
+        &lt;/document:SttlmInf&gt;&#xd;
+        &lt;document:PmtTpInf&gt;&#xd;
+          &lt;document:LclInstrm&gt;&#xd;
+            &lt;document:Prtry&gt;P2P&lt;/document:Prtry&gt;&#xd;
+          &lt;/document:LclInstrm&gt;&#xd;
+        &lt;/document:PmtTpInf&gt;&#xd;
+        &lt;document:InstgAgt&gt;&#xd;
+          &lt;document:FinInstnId&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;BPCDM-B&lt;/document:Id&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:FinInstnId&gt;&#xd;
+        &lt;/document:InstgAgt&gt;&#xd;
+        &lt;document:InstdAgt&gt;&#xd;
+          &lt;document:FinInstnId&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;YBRD-B&lt;/document:Id&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:FinInstnId&gt;&#xd;
+        &lt;/document:InstdAgt&gt;&#xd;
+      &lt;/document:GrpHdr&gt;&#xd;
+      &lt;document:CdtTrfTxInf&gt;&#xd;
+        &lt;document:PmtId&gt;&#xd;
+          &lt;document:EndToEndId&gt;-&lt;/document:EndToEndId&gt;&#xd;
+          &lt;document:TxId&gt;${OrgnlId_g2}&lt;/document:TxId&gt;&#xd;
+        &lt;/document:PmtId&gt;&#xd;
+        &lt;document:IntrBkSttlmAmt Ccy=&quot;USD&quot;&gt;10&lt;/document:IntrBkSttlmAmt&gt;&#xd;
+        &lt;document:AccptncDtTm&gt;2023-04-04T17:42:39.071+06:00&lt;/document:AccptncDtTm&gt;&#xd;
+        &lt;document:InstdAmt Ccy=&quot;USD&quot;&gt;10&lt;/document:InstdAmt&gt;&#xd;
+        &lt;document:ChrgBr&gt;SLEV&lt;/document:ChrgBr&gt;&#xd;
+        &lt;document:Dbtr&gt;&#xd;
+          &lt;document:Nm&gt;MSCWT&lt;/document:Nm&gt;&#xd;
+          &lt;document:PstlAdr&gt;&#xd;
+            &lt;document:AdrLine&gt;MOSCOW&lt;/document:AdrLine&gt;&#xd;
+          &lt;/document:PstlAdr&gt;&#xd;
+        &lt;/document:Dbtr&gt;&#xd;
+        &lt;document:DbtrAcct&gt;&#xd;
+          &lt;document:Id&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;131234567890&lt;/document:Id&gt;&#xd;
+              &lt;document:SchmeNm&gt;&#xd;
+                &lt;document:Prtry&gt;ACCT&lt;/document:Prtry&gt;&#xd;
+              &lt;/document:SchmeNm&gt;&#xd;
+              &lt;document:Issr&gt;C&lt;/document:Issr&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:Id&gt;&#xd;
+        &lt;/document:DbtrAcct&gt;&#xd;
+        &lt;document:DbtrAgt&gt;&#xd;
+          &lt;document:FinInstnId&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;BPCDM-B&lt;/document:Id&gt;&#xd;
+              &lt;document:Issr&gt;ATM&lt;/document:Issr&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:FinInstnId&gt;&#xd;
+        &lt;/document:DbtrAgt&gt;&#xd;
+        &lt;document:CdtrAgt&gt;&#xd;
+          &lt;document:FinInstnId&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;YBRD-B&lt;/document:Id&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:FinInstnId&gt;&#xd;
+        &lt;/document:CdtrAgt&gt;&#xd;
+        &lt;document:Cdtr&gt;&#xd;
+          &lt;document:Nm&gt;test&lt;/document:Nm&gt;&#xd;
+        &lt;/document:Cdtr&gt;&#xd;
+        &lt;document:CdtrAcct&gt;&#xd;
+          &lt;document:Id&gt;&#xd;
+            &lt;document:Othr&gt;&#xd;
+              &lt;document:Id&gt;13123456789000123&lt;/document:Id&gt;&#xd;
+              &lt;document:SchmeNm&gt;&#xd;
+                &lt;document:Prtry&gt;ACCT&lt;/document:Prtry&gt;&#xd;
+              &lt;/document:SchmeNm&gt;&#xd;
+            &lt;/document:Othr&gt;&#xd;
+          &lt;/document:Id&gt;&#xd;
+        &lt;/document:CdtrAcct&gt;&#xd;
+        &lt;document:RmtInf&gt;&#xd;
+          &lt;document:Ustrd&gt;Transferring my funds&lt;/document:Ustrd&gt;&#xd;
+        &lt;/document:RmtInf&gt;&#xd;
+      &lt;/document:CdtTrfTxInf&gt;&#xd;
+    &lt;/document:FIToFICstmrCdtTrf&gt;&#xd;
+  &lt;/document:Document&gt;&#xd;
+&lt;/FPEnvelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">9001</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/xml_sign</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-type</stringProp>
+                <stringProp name="Header.value">application/xml</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">704X1djnxNyQDnXT7ThIPdrY0pe4noITfYSykOY6UbjXmSRN-YvF2tiM1GMuFu-rg4jwgK_mNLYhK0ejTy3gGHsGa9Vt8P9IINziGfSzQlzsRILf3xrziZHUWFJiy3Q9ykou7VL_dBFE9ovk_yVbpdY9BHZ3wcnlr1y99DwZWVlcD3ydOncIHddTvHgmAkyncrNbTFX14lcXOfH_zTs2</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug PostProcessor" enabled="true">
+            <boolProp name="displayJMeterProperties">false</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySamplerProperties">true</boolProp>
+            <boolProp name="displaySystemProperties">false</boolProp>
+          </DebugPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>false</message>
+              <threadName>true</threadName>
+              <dataType>false</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>false</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <hostname>true</hostname>
+              <threadCounts>true</threadCounts>
+              <sampleCount>true</sampleCount>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ips_tc_-23 : generate token with valid user name and valid password and grant_type password" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
