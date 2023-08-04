@@ -1,0 +1,75 @@
+<FinInstnCdtTrf>
+	<GrpHdr>
+		<MsgId>NP20211001001</MsgId>
+		<CreDtTm>2021-10-01T17:00:00Z</CreDtTm>
+		<NbOfTxs>2</NbOfTxs>
+		<SttlmInf>
+			<SttlmMtd>CLRG</SttlmMtd>
+			<ClrSys>
+				<Prtry>CNAPS</Prtry>
+			</ClrSys>
+			<SttlmAcct>
+				<Id>
+					<Othr>
+						<Id>CNY0000000000000000</Id>
+						<SchmeNm>
+							<Cd>CENT</Cd>
+						</SchmeNm>
+					</Othr>
+				</Id>
+			</SttlmAcct>
+		</SttlmInf>
+		<InstgAgt>
+			<FinInstnId>
+				<BIC>CNAPCNBJ</BIC>
+			</FinInstnId>
+		</InstgAgt>
+	</GrpHdr>
+	<PmtInf>
+		<PmtInfId>PMT20211001001</PmtInfId>
+		<ReqdExctnDt>2021-10-01</ReqdExctnDt>
+		<DbtrAgt>
+			<FinInstnId>
+				<BIC>CNAPCNBJ</BIC>
+				<!-- Central bank switch BIC -->
+			</FinInstnId>
+		</DbtrAgt>
+		<!-- Other elements omitted for brevity -->
+		<CdtTrfTxInf>
+			<!-- First transaction for clearing member A -->
+			<PmtId>
+				<InstrId>PMT20211001001A</InstrId>
+				<EndToEndId>PMT20211001001A</EndToEndId>
+			</PmtId>
+			<Amt>
+				<InstdAmt Ccy="CNY">500000.00</InstdAmt>
+				<!-- Net position of clearing member A -->
+			</Amt>
+			<!-- Other elements omitted for brevity -->
+			<CdtrAgt>
+				<FinInstnId>
+					<BIC>BANKABCCNBJ</BIC>
+					<!-- Clearing member A BIC -->
+				</FinInstnId>
+			</CdtrAgt>
+		</CdtTrfTxInf>
+		<CdtTrfTxInf>
+			<!-- Second transaction for clearing member B -->
+			<PmtId>
+				<InstrId>PMT20211001001B</InstrId>
+				<EndToEndId>PMT20211001001B</EndToEndId>
+			</PmtId>
+			<Amt>
+				<InstdAmt Ccy="CNY">-500000.00</InstdAmt>
+				<!-- Net position of clearing member B -->
+			</Amt>
+			<!-- Other elements omitted for brevity -->
+			<CdtrAgt>
+				<FinInstnId>
+					<BIC>BANKXYZCNBJ</BIC>
+					<!-- Clearing member B BIC -->
+				</FinInstnId>
+			</CdtrAgt>
+		</CdtTrfTxInf>
+	</PmtInf>
+</FinInstnCdtTrf>
